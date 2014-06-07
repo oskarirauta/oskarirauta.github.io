@@ -563,21 +563,13 @@
     <script id="hour-item-template" type="template">
       <li data-id="{{id}}" class="swipeout hour-item">
         <a href="#" onclick="javascript: startEditor('{{id}}'); return true;" class="item-link item-content swipeout-content" style="padding-left: 4px;">
-          <div class="item-media" style="height: 38px; text-align: right; width: 66px; border: dashed 1px #000; margin-top: 4px; margin-bottom: 4px; padding: 3px; padding-right: 4px; padding-bottom: 4px; display: block;">{
-            {
-            date}
-      }
+          <div class="item-media" style="height: 38px; text-align: right; width: 66px; border: dashed 1px #000; margin-top: 4px; margin-bottom: 4px; padding: 3px; padding-right: 4px; padding-bottom: 4px; display: block;">
+          	{{date}}
     </div>
       <div class="item-inner" style="margin-left: 7px;">
-        <div class="item-title">{
-          {
-          description}
-      }
+        <div class="item-title">{{description}}
     </div>
-      <div class="item-after">{
-        {
-        duration}
-      }
+      <div class="item-after">{{duration}}
     </div>
     </div>
     </a>
