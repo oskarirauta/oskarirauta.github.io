@@ -26,8 +26,10 @@ img/icon-114.png
 img/icon-120.png
 img/icon-144.png
 img/icon-152.png
+# Additional items to cache.
 
 NETWORK:\n*\n
+# All URLs that start with the following lines
+# are whitelisted.
 
-# Additional items to cache.
-#FALLBACK:
+FALLBACK:

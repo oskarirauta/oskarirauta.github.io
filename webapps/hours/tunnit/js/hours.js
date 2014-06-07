@@ -95,7 +95,7 @@ function validateSummary(amount) {
         hourPart++;
     }
 
-    return hourPart + "." + minPart;
+	return hourPart + ( isNaN(minPart) ? '' : ( '.' + minPart ));
 }
 
 function validateFormTime(fieldname) {
