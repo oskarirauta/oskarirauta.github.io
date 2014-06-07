@@ -1,0 +1,136 @@
+.tab-link [class^="glyph-"]:before, .tab-link [class*=" glyph-"]:before {
+	margin-top: 4px;
+	font-size: 24px;
+	text-shadow: 1px 1px 1px rgba(9, 9, 9, 0.87);
+	opacity: .85;
+}
+
+div.navbar-inner [class^="glyph-"]:before, div.navbar-inner [class*=" glyph-"]:before {
+	font-size: 26px;
+	color: #207ff2;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(7, 7, 7, 0.88);
+	opacity: .9;
+}
+
+.glyph-plus-1 {
+	margin-top: 5px;
+}
+
+.glyph-paste {
+	margin-top: 4px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+}
+
+i.icon-plus {
+  color: #000;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  font-size: 31px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.list-block input[type="time"] {
+	font-size: 17px;
+	-webkit-appearance: none;
+	padding-left: 5px;
+	border: 0;	
+	line-height: 44px;
+}
+
+.list-block .item-input-after {
+	width: 100%;
+	margin-top: -8px;
+	margin-bottom: -7px;
+	margin-left:  5px;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex-shrink: 1;
+	-ms-flex: 0 1 auto;
+	flex-shrink: 1;
+	text-align: right;
+}
+
+.list-block .item-input-after input {
+-webkit-appearance: none;
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: none;
+-webkit-overflow-scrolling: touch;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+-webkit-text-size-adjust: 100%;
+-webkit-touch-callout: none;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(0, 0, 0);
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-left-color: rgb(0, 0, 0);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(0, 0, 0);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(0, 0, 0);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
+box-shadow: none;
+box-sizing: border-box;
+color: rgb(0, 0, 0);
+display: block;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 17px;
+height: 43px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+margin-left: 0px;
+margin-right: 0px;
+outline-color: rgb(0, 0, 0);
+outline-style: none;
+outline-width: 0px;
+padding-left: 5px;
+padding-right: 5px;
+text-align: right;
+width: 165px;
+}
+
+.list-block .item-input-after input[type="time"] {
+	margin-top: -6px;
+}
+
+.list-block .item-input-after textarea {
+	width: 163px;
+	text-align: right;
+}
+
+
+li.hour-item a .item-media {
+	padding-bottom: 8px;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+li.hour-item a .item-title {
+	height: 30px;
+	line-height: 14px;
+	font-size: 19px;
+}
+
+li.hour-item a .item-title small {
+	font-size: 10px;
+	line-height: 10px;
+}

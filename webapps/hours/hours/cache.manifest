@@ -1,0 +1,33 @@
+CACHE MANIFEST
+# This is a comment.
+# Cache manifest version 0.0.26
+# If you change the version number in this comment,
+# the cache manifest is no longer byte-for-byte
+# identical.
+
+CACHE:
+index.html
+css/framework7.min.css
+css/glyphs.css
+css/hours.css
+js/framework7.min.js
+js/hours.js
+font/fontello.eot
+font/fontello.svg
+font/fontello.svg?28546769#fontello
+font/fontello.ttf
+font/fontello.ttf?28546769
+font/fontello.woff
+font/fontello.woff?28546769
+img/icon-57.png
+img/icon-72.png
+img/icon-76.png
+img/icon-114.png
+img/icon-120.png
+img/icon-144.png
+img/icon-152.png
+
+NETWORK:\n*\n
+
+# Additional items to cache.
+#FALLBACK:

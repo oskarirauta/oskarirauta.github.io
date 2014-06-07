@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest" class="with-statusbar-overlay">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Hours</title>
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/hours.css">
+    <link rel="stylesheet" href="css/glyphs.css">
+    <!-- Favicon-->
+    <link href="img/icon-57.png" rel="shortcut icon"> 
+    <!-- iOS 7 iPad (retina) -->
+    <link href="img/icon-152.png" sizes="152x152" rel="apple-touch-icon">
+    <!-- iOS 6 iPad (retina) -->
+    <link href="img/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <!-- iOS 7 iPhone (retina) -->
+    <link href="img/icon-120.png" sizes="120x120" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone (retina) -->
+    <link href="img/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <!-- iOS 7 iPad -->
+    <link href="img/icon-76.png" sizes="76x76" rel="apple-touch-icon">
+    <!-- iOS 6 iPad -->
+    <link href="img/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <!-- iOS 6 iPhone -->
+    <link href="img/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+  </head>
+  <body>
+    <!-- Statusbar overlay-->
+    <div class="statusbar-overlay"></div>
+    <!-- Views-->
+    <div class="views tabs toolbar-through">
+      <div id="view-database" class="view view-main navbar-fixed tab active">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" data-sortable=".hour-items-list" class="link icon-only toggle-sortable"><i class="icon icon-bars-blue"></i></a>
+            </div>
+            <div class="center sliding">Hours</div>
+            <div class="right">
+              <a href="#" class="link icon-only addbtn"><i class="icon icon-plus">+</i></a>
+            </div>
+          </div>
+        </div>
+        <div class="pages">
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <div class="list-block hour-items-list sortable">
+                <ul></ul>
+              </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="modal-overlay"></div>
+    </div>
+
+      <div id="view-report" class="view tab navbar-fixed">
+		<div class="navbar">
+  			<div class="navbar-inner">
+    			<div class="center sliding">Report</div>
+    			<div class="right"><a href="#" class="link ac-report"><i class="icon glyph-mail"></i></a></div>
+  			</div>
+		</div>              
+        <div class="pages">
+          <div data-page="index" class="page">
+            <div class="page-content">
+        		<div class="content-block">
+        			<div class="content-block-inner">
+            			<div id="report-tables"></div>
+            		</div>
+   		  		</div>
+  	     	</div>
+       	</div>
+      </div>
+     </div>
+      
+      
+      <div id="view-settings" class="view tab navbar-fixed">
+		<div class="navbar">
+  			<div class="navbar-inner">
+    			<div class="center sliding">Settings</div>
+    			<div class="right"><a href="#" class="link savesettings">Save</a></div>
+  			</div>
+		</div>
+        <div class="pages">
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <div class="content-block-title">Information</div>
+              <div class="list-block">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-media"><i class="icon glyph-suitcase"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">Company</div>
+                      <div class="item-input-after">
+                          <input type="text" name="company" placeholder="Company’s name" autocorrect="on" autocapitalize="words">
+                        </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-media"><i class="icon glyph-user-1"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">Employer</div>
+                      <div class="item-input-after">
+                          <input type="text" name="employer" placeholder="Employer’s name" autocorrect="on" autocapitalize="words">
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block-title">Export settings</div>
+              <div class="list-block">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-media"><i class="icon glyph-mail-alt"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">E-mail</div>
+                      <div class="item-input-after">
+                          <input type="email" name="emailAddr" placeholder="Default address" autocorrect="on" autocapitalize="none">
+                        </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-media"><i class="icon glyph-export-alt"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">CC (opt.)</div>
+                      <div class="item-input-after">
+                          <input type="email" name="emailCC" placeholder="Default CC address" autocorrect="on" autocapitalize="none">
+                        </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-media"><i class="icon glyph-comment"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title label">Subject</div>
+                      <div class="item-input-after">
+                          <input type="text" name="emailSubj" placeholder="Default subject" autocorrect="on" autocapitalize="sentences">
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="content-block inset">
+              	<a href="#" class="button button-big button-cancel ac-clearlist">Clear database</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>      
+
+      <div id="view-about" class="view tab navbar-fixed">
+		<div class="navbar">
+  			<div class="navbar-inner">
+    			<div class="center sliding">About</div>
+  			</div>
+		</div>              
+        <div class="pages">
+          <div data-page="index" class="page">
+            <div class="page-content">
+              	<div class="content-block-title">
+                  Hours
+                  <div style="font-size: 10px; line-height: 10px; padding-top: 3px;">v0.91</div>
+              	</div>
+              	<div class="content-block">
+                  <p>
+                    Written by <a href=“mailto: oskari.rauta@gmail.com”>Oskari Rauta</a>. &copy; 2014.
+                  </p>
+                <div class="content-block-inner">
+                  <p>
+                    This webapp is using <a href="http://www.idangero.us/framework7" class=“external”>Framework7</a>.<br />
+                    Thank you for great framework.
+                  </p>
+                  <p>
+                    Glyphs used in the project are derived from a font generated by <a href="http://www.fontello.com" class="external">Fontello</a>.
+                    Glyphs included in font used by this application are SIL licensed and created by Dave Gandy. They belong to <a href="http://fortawesome.github.io" class="external"><i>Font Awesome</i></a>.
+                    </p>
+                </div>
+              	<div class="content-block-title">
+              		License
+              	</div>
+                <div class="content-block">
+                	Copyright &copy; 2014 Oskari Rauta<br/>
+                	<br/>
+                	Permission is hereby granted, free of charge, to any person obtaining
+                	a copy of this software and associated documentation files (the
+                	"Software"), to deal in the Software without restriction, including
+                	without limitation the rights to use, copy, modify, merge, publish,
+                	distribute, sublicense, and/or sell copies of the Software, and to
+                	permit persons to whom the Software is furnished to do so, subject to
+                	the following conditions:<br/>
+                	<br/>
+                	The above copyright notice and this permission notice shall be included
+                	in all copies or substantial portions of the Software.<br/>
+                	<br/>
+                	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+                	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+                	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+                	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+                	CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+                	TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+                	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+        <a href="#view-database" class="tab-link active">
+          	<i class="icon glyph-th-list"></i>
+            <span class="tabbar-label">Database</span>
+        </a>
+        <a href="#view-report" class="tab-link">
+          	<i class="icon glyph-doc-text"></i>
+            <span class="tabbar-label">Report</span>
+        </a>
+        <a href="#view-settings" class="tab-link">
+          	<i class="icon glyph-wrench"></i>
+            <span class="tabbar-label">Settings</span>
+        </a>      
+        <a href="#view-about" class="tab-link">
+          	<i class="icon glyph-info"></i>
+            <span class="tabbar-label">About</span>
+        </a>      
+          </div>
+        </div>
+      
+      
+    <!-- Popup to add new task           -->
+    <div class="popup popup-add">
+      <div class="view view-popup navbar-fixed">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link close-popup">Back</a></div>
+            <div class="center sliding">Add details</div>
+            <div class="right"><a href="#" class="link addhoursbtn">Done</a></div>
+          </div>
+        </div>
+        <div class="pages">
+          <div class="page">
+            <div class="page-content">
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-calendar-empty"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Date</div>
+                        <div class="item-input-after">
+                          <input type="date" name="date" placeholder="Date">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-expand-right"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Begins</div>
+                        <div class="item-input-after">
+                          <input type="time" name="begins" placeholder="Beginning time">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-collapse-left"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Ends</div>
+                        <div class="item-input-after">
+                          <input type="time" name="ends" placeholder="Ending time">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-doc-text"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Description</div>
+                        <div class="item-input-after">
+                          <input type="text" name="description" placeholder="Description of event" autocorrect="on" autocapitalize="sentences">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media" style="margin-bottom: auto;"><i class="icon glyph-coffee"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label" style="margin-bottom: auto;">Info</div>
+                        <div class="item-input-after">
+                          <textarea name="info" placeholder="Additional information" autocorrect="on" autocapitalize="sentences"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Popup to edit hours           -->
+    <div class="popup popup-edit">
+      <div class="view view-popup navbar-fixed">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link close-popup">Back</a></div>
+            <div class="center sliding">Edit details</div>
+            <div class="right"><a href="#" class="link modifyhoursbtn">Done</a></div>
+          </div>
+        </div>
+        <div class="pages">
+          <div class="page">
+            <div class="page-content">
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-calendar-empty"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Date</div>
+                        <div class="item-input-after">
+                          <input type="date" name="date2" placeholder="Date">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-expand-right"></i></div>                      
+                      <div class="item-inner">
+                        <div class="item-title label">Begins</div>
+                        <div class="item-input-after">
+                          <input type="time" name="begins2" placeholder="Beginning time">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-collapse-left"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Ends</div>
+                        <div class="item-input-after">
+                          <input type="time" name="ends2" placeholder="Ending time">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon glyph-doc-text"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Description</div>
+                        <div class="item-input-after">
+                          <input type="text" name="description2" placeholder="Description of event" autocorrect="on" autocapitalize="sentences">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media" style="margin-bottom: auto;"><i class="icon glyph-coffee"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label" style="margin-bottom: auto;">Info</div>
+                        <div class="item-input-after">
+                          <textarea name="info2" placeholder="Additional information" autocorrect="on" autocapitalize="sentences"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Template-->
+    <script id="hour-item-template" type="template">
+      <li data-id="{{id}}" class="swipeout hour-item">
+        <a href="#" onclick="javascript: startEditor('{{id}}'); return true;" class="item-link item-content swipeout-content" style="padding-left: 4px;">
+          <div class="item-media" style="height: 38px; text-align: right; width: 66px; border: dashed 1px #000; margin-top: 4px; margin-bottom: 4px; padding: 3px; padding-right: 4px; padding-bottom: 4px; display: block;">{{date}}</div>
+          <div class="item-inner" style="margin-left: 7px;">
+            <div class="item-title">{{description}}</div>
+              <div class="item-after">{{duration}}</div>
+          </div>
+        </a>
+        <div class="swipeout-actions">
+          <div class="swipeout-actions-inner"><a href="#" class="swipeout-delete">Delete</a></div>
+        </div>
+        <div class="sortable-handler"></div>
+      </li>
+    </script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/hours.js"></script>
+  </body>
+</html>
