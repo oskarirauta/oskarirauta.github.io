@@ -56,6 +56,9 @@ function validateTime(oldTime) {
     var retHour = '';
     var retMin = '';
 
+	if (isNaN(hours))
+		return oldTime;
+
     if (minutes < 11) {
         newMinutes = 0;
     }
