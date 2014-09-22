@@ -134,3 +134,7 @@ li.hour-item a .item-title small {
 	font-size: 10px;
 	line-height: 10px;
 }
+
+.modal-overlay-visible {
+	display: none;
+}
