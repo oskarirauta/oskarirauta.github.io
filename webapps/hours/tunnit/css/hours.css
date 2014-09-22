@@ -136,5 +136,5 @@ li.hour-item a .item-title small {
 }
 
 .modal-overlay-visible {
-	display: none;
+	display: none !important;
 }
